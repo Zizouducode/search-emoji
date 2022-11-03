@@ -47,18 +47,37 @@ h1 {
 
 .emoji {
   display: flex;
-  background-color: #f8efef;
+  background-color: #fcf8f8;
   height: 45px;
   margin: 10px;
   width: 500px;
   align-items: center;
   padding-left: 10px;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.hidden:hover {
+  display: inline;
+}
+.emoji:hover {
+  background-color: #f8efef;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.emoji:hover .hidden {
+  display: block;
 }
 
 /* FOOTER */
 
 footer {
   margin-top: 50px;
+  height: 100px;
 }
 
 footer span {

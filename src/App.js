@@ -16,7 +16,7 @@ function App() {
   const results = [];
   if (!search) {
     for (let i = 0; i < 20; i++) {
-      results.push([data[i].symbol, data[i].title]);
+      results.push(data[i]);
     }
   }
   data.map((elem) => {
@@ -24,7 +24,7 @@ function App() {
     const addInTab = regex.test(elem.keywords);
 
     if (addInTab) {
-      results.push([elem.symbol, elem.title]);
+      results.push({ symbol: elem.symbol, title: elem.title });
     }
     return results;
   });
