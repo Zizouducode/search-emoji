@@ -3,6 +3,7 @@ import Search from "./components/Search";
 import { useState } from "react";
 import data from "./assets/data.json";
 import Line from "./components/Line";
+import Footer from "./components/Footer";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -13,9 +14,15 @@ function App() {
   const regex = new RegExp(search, "i");
   console.log(regex);
   const results = [];
+  if (!search) {
+    for (let i = 0; i < 20; i++) {
+      results.push([data[i].symbol, data[i].title]);
+    }
+  }
   data.map((elem) => {
     if (!search) return null;
     const addInTab = regex.test(elem.keywords);
+
     if (addInTab) {
       results.push([elem.symbol, elem.title]);
     }
@@ -26,6 +33,7 @@ function App() {
     <div className="container">
       <Search search={search} handleSearchChange={handleSearchChange} />
       <Line results={results} />
+      <Footer />
     </div>
   );
 }

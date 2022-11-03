@@ -54,3 +54,13 @@ h1 {
   align-items: center;
   padding-left: 10px;
 }
+
+/* FOOTER */
+
+footer {
+  margin-top: 50px;
+}
+
+footer span {
+  font-weight: 700;
+}
